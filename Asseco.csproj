@@ -46,46 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Exception\AssecoException.cs" />
-    <Compile Include="Core\Exception\SqlServerException.cs" />
-    <Compile Include="Core\Form\AssecoForm.cs">
+    <Compile Include="Core\AssecoException.cs" />
+    <Compile Include="Model\ArtistModel.cs" />
+    <Compile Include="Model\IArtistModel.cs" />
+    <Compile Include="Presenter\ArtistPresenter.cs" />
+    <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="UI\ArtistForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Core\IDatabase.cs" />
+    <Compile Include="UI\ArtistForm.Designer.cs">
+      <DependentUpon>ArtistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AssecoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Core\IModel.cs" />
     <Compile Include="Core\IPresenter.cs" />
     <Compile Include="Core\IView.cs" />
-    <Compile Include="Core\SQLDatabase.cs" />
-    <Compile Include="Model\Artist\ArtistModel.cs" />
-    <Compile Include="Model\Artist\ArtistRepository.cs" />
-    <Compile Include="Model\Artist\IArtistModel.cs" />
-    <Compile Include="Presenter\ArtistPresenter.cs" />
-    <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Artist\Add.cs">
+    <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Artist\Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Artist\ArtistForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Main\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Toolbar\ControlToolbar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Toolbar\ControlToolbarButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Toolbar\ToolBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Toolbar\ToolbarButton.cs">
-      <SubType>Component</SubType>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IArtistView.cs" />
     <Compile Include="View\IMainView.cs" />
@@ -99,8 +83,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Artist\Add.resx">
-      <DependentUpon>Add.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ArtistForm.resx">
+      <DependentUpon>ArtistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,7 +103,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presenter\Exception\" />
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add-icon.png" />
@@ -125,31 +112,10 @@
     <None Include="Resources\asseco_see_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Files-New-File-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ModernXP-69-Window-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Music-Note-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Orb-info-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Places-folder-music-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\reload-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\star-rating-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\symbol-delete-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user-group-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
@@ -171,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\window-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,5 +18,6 @@ namespace Asseco.Core
     /// </remarks>
     public interface IModel
     {
+     
     }
 }
